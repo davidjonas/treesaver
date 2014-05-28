@@ -118,9 +118,10 @@ goog.scope(function() {
     else if (/opera/.test(capabilities.ua_)) {
       return 'opera';
     }
-    else if (/msie/.test(capabilities.ua_)) {
+    else if (/msie/.test(capabilities.ua_) ||
+    ("Netscape" == window.navigator.appName && /trident/i.test(capabilities.ua_))) {
       return 'msie';
-    }
+    }    
     else if (!/compatible/.test(capabilities.ua_) &&
       /mozilla/.test(capabilities.ua_)) {
       return 'mozilla';
